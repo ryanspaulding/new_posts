@@ -7,7 +7,7 @@ require 'uri'
 require 'date'
 
 # set this if you do not want to pass a URL on the commandline 
-URL = nil
+URL = nil 
 
 # little function to append 'st, nd, rd or th' after the day of the month:
 # October 10th, 2011
@@ -31,7 +31,7 @@ if URL.nil? and ARGV.length > 2
 	exit(1)
 end
 
-if URL.nil?
+if URL.nil? or not ARGV[0].nil?
 	@posts_feed = ARGV[0]
 else
 	@posts_feed = URL
