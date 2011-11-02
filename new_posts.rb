@@ -64,7 +64,7 @@ begin
 		@good_date = "#{@date_pieces[2]}/#{@date_pieces[1]}/#{@date_pieces[3]}"
 		# now the format is the format it is in not the format you want
 		@nice_date = Date.strptime(@good_date, "%b/%d/%Y")
-		@posts.push({:title => item.elements["title"].text, :link => item.elements["link"].text, :date => @nice_date.strftime("%B #{ordinalize(@nice_date.day)}, %Y"), :description => item.elements["description"].text})
+		@posts.push({:title => item.elements["title"].text, :link => item.elements["link"].text, :date => @nice_date.strftime("%B the #{ordinalize(@nice_date.day)}, %Y"), :description => item.elements["description"].text})
 		@counter += 1
 	end
 
